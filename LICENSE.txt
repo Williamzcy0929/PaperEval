@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 Williamzcy0929
+Copyright (c) 2025 Williamzcy0929 (Changyue (William) Zhao)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
