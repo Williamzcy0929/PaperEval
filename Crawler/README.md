@@ -82,7 +82,7 @@ The following guide can be followed by anyone, including those new to Python and
 
 5. **Download or Clone this repository**:
    ```bash
-   git clone https://github.com/YourUser/PDF-Email-Crawler.git
+   git clone https://github.com/Williamzcy0929/PDF-Email-Crawler.git
    cd PDF-Email-Crawler
    ```
 6. Place your crawler code (e.g., `crawler_pdf.py` or `crawler.ipynb`) in this folder if it is not already present.
