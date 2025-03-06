@@ -1,8 +1,6 @@
 # PaperEval (AI Evaluation of OpenReview Papers)
 
-\begin{center}
 Licensed under the MIT License. See LICENSE for details.
-\end{center}
 
 ## Overview
 This project aims to automate the extraction of papers from OpenReview for recent ML conferences (e.g., NeurIPS, ICLR, ICML). The scraped data will be structured into a dictionary containing detailed metadata for each paper. Then, we will fine-tune an OpenAI model to predict the final decision based on submission details, reviewer comments, and scores.
