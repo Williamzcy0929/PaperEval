@@ -26,7 +26,7 @@ This repository contains a Python-based crawler that uses **Selenium** to scrape
 
 You need:
 
-- **Python 3.9+** (or a recent version)
+- **Python 3.9+** (or a recent version, we use Python 3.11.11)
 - **Selenium** (for web automation)
 - **Requests** (for PDF download)
 - **PyMuPDF** (for PDF text extraction)
