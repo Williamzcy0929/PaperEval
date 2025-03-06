@@ -26,7 +26,7 @@ This repository contains a Python-based crawler that uses **Selenium** to scrape
 
 You need:
 
-- **Python 3.9+** (or a recent version, we use Python 3.11.11)
+- **Python 3.9+** (or a recent version)
 - **Selenium** (for web automation)
 - **Requests** (for PDF download)
 - **PyMuPDF** (for PDF text extraction)
@@ -82,10 +82,10 @@ The following guide can be followed by anyone, including those new to Python and
 
 5. **Download or Clone this repository**:
    ```bash
-   git clone https://github.com/Williamzcy0929/PDF-Email-Crawler.git
-   cd PDF-Email-Crawler
+    git clone https://github.com/Williamzcy0929/PaperEval.git
+    cd PaperEval/Crawler
    ```
-6. Place your crawler code (e.g., `crawler_pdf.py` or `crawler.ipynb`) in this folder if it is not already present.
+6. Place your crawler code (e.g., `crawler.py` or `crawler.ipynb`) in this folder if it is not already present.
 
 ## Run the Crawler
 
@@ -96,9 +96,9 @@ The following guide can be followed by anyone, including those new to Python and
 
 2. Update the code to point to your desired conference, output file, and error file, as described above (under **Usage**).
 
-3. Run the Python script directly:
+3. Run the Python script (`crawler.py`) directly:
    ```bash
-   python crawler_pdf.py
+   python crawler.py
    ```
    Or, if you have a Jupyter notebook (`crawler.ipynb`), open Jupyter and run all cells.
 
