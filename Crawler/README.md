@@ -123,7 +123,7 @@ ERROR_FILE = "errors_iclr_2024.json"
 Then, run:
 
 ```bash
-python crawler_pdf.py
+python crawler.py
 ```
 
 The script will produce two JSON files:  
