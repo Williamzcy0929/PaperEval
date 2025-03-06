@@ -49,6 +49,7 @@ You need:
    OUTPUT_FILE = "output.json"                    # change this to the output file name
    ERROR_FILE = "errors.json"                     # change this to the error file name
    ```
+4. **Checkpoint / Resume**: By default, the crawler reads/writes a JSON file (e.g. `output.json`) and checks which papers have been completed. If it’s stopped midway, it can restart without duplicating entries or re-processing the same papers.
 
 ## Step-by-Step Setup Instructions
 
@@ -107,6 +108,7 @@ While running:
 - It collects all forum links.
 - For each paper, it scrapes key metadata and, if a PDF is found, downloads and parses it using PyMuPDF.
 - Extracted emails go to `paper_info["pdf_emails"]`, along with `"full_email"` for the first, second, and last authors.
+- If the script encounters an error or is terminated unexpectedly, re-running it will pick up from the last processed paper (i.e., it supports checkpoint/resume out of the box).
 
 ### ICLR 2024 Example
 
