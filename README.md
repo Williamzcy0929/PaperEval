@@ -30,10 +30,10 @@ The output should be a dictionary with the following keys:
   ...
 | `final_decision` | Acceptance/Rejection |
 
-### Expected Tools
-- Web Scraping: `requests`, `BeautifulSoup4`, `Selenium` (if needed)
+### Used Tools
+- Web Scraping: `request`, `Selenium`
+- Dealing with PDF File: `PyMuPDF` (`fitz`)
 - Data Storage: JSON file
-- Parallel Scraping: `asyncio` and `aiohttp` for efficiency
 
 ### Deliverable
 - A Python script to:
@@ -54,7 +54,7 @@ The output should be a dictionary with the following keys:
   - Paper metadata + reviewer scores + reviewer comments.
 - Evaluate the model’s accuracy in decision prediction.
 
-### Expected Tools
+### Used Tools
 - Model Fine-Tuning through OpenAI API
 - Evaluation Metrics: Accuracy, Precision, Recall, F1-score
 
