@@ -36,7 +36,7 @@ You need:
 
 1. The code is generally contained in a Python script or Jupyter notebook (e.g., `crawler_pdf.py` or `crawler.ipynb`).  
 2. It automatically:
-   - Opens the OpenReview tab (for instance, for ICLR 2024).
+   - Opens the OpenReview tab (for instance, for [ICLR 2024](https://openreview.net/group?id=ICLR.cc/2024/Conference#tab-accept-oral)).
    - Finds all forum links.
    - Scrapes title, abstract, authors, decision, reviews.
    - Downloads and parses the PDF for emails.
