@@ -61,7 +61,7 @@ if not openai.api_key:
 
 # Load the JSON file containing paper data. In this example, the file is named "iclr2024.json".
 # Adjust the filename if your data file is named differently or located elsewhere.
-with open('iclr2024.json', 'r') as f:
+with open('paper_data_file', 'r') as f: # replace with your own data file
     papers = json.load(f)
 
 def preprocess_data(papers):
@@ -216,7 +216,7 @@ def fine_tune_model(train_data, feature_type):
     # Create the fine-tuning job with a specified base model and a custom suffix.
     fine_tune_response = openai.FineTuningJob.create(
         training_file=file_id,
-        model="gpt-4o-2024-08-06",  # Example model name
+        model="gpt-4o-2024-08-06",  # change to the model you want to fine-tune
         suffix="PaperEval",
     )
     
