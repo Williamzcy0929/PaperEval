@@ -1,43 +1,44 @@
 # coding: utf-8
 """
-Paper Review Aggregation Script (Modified with Detailed Comments).
+Fine-Tuning OpenAI Model for Paper Decision Prediction (Modified with Detailed Comments)
 
-This script demonstrates how to collect metadata about academic papers from a specified
-website or repository (e.g., OpenReview). It uses Selenium for web automation and 
-PyMuPDF (fitz) for extracting textual data from downloaded PDF files, including email 
-addresses (with support for bracketed formats like {name1, name2}@domain.com).
+This script demonstrates how to fine-tune an OpenAI language model (e.g., GPT-4) to predict the acceptance or rejection of academic papers using metadata and reviewer feedback collected from repositories such as OpenReview. The process includes data preprocessing, model training through OpenAI’s fine-tuning API, and evaluation using common machine learning metrics.
 
 Prerequisites:
     - Python 3.9+ (recommended)
-    - Selenium (pip install selenium)
-    - Requests (pip install requests)
-    - PyMuPDF (pip install pymupdf)
-    - A working ChromeDriver that matches your local Chrome browser version
+    - OpenAI API library (pip install openai)
+    - NumPy, Pandas, and Scikit-learn libraries (pip install numpy pandas scikit-learn)
+    - Valid OpenAI API key (set as an environment variable or manually in the script)
 
 Usage:
-    1. Update the variables: `CONFERENCE_URL`, `OUTPUT_FILE`, and `ERROR_FILE` 
-       to reflect your target conference or data repository and output preferences.
-    2. Install the required Python libraries as listed in the prerequisites.
-    3. Ensure `chromedriver` is accessible via your system PATH, or specify its 
-       location when initializing `webdriver.Chrome`.
-    4. Execute the script:
-         python paper_review_aggregator.py
+    1. Obtain and set your OpenAI API key:
+       - Recommended: Set the environment variable `OPENAI_API_KEY`.
+       - Alternatively, manually specify in the script:
+           # openai.api_key = "your-api-key"
+
+    2. Prepare your dataset:
+       - Replace `'paper_data_file'` in the script with the path to your dataset file.
+
+    3. Execute data splitting into training and test sets:
+           train_set, test_set = train_test_split(dataset, test_size=0.2, random_state=0)
+
+    4. Start the fine-tuning process by running:
+           python Finetune_OpenAI_Model.py
+       Or, if using a Jupyter notebook (`Finetune_OpenAI_Model.ipynb`), open Jupyter and execute all cells.
 
 What It Does:
-    - Navigates the given conference or repository web page and scrolls down 
-      to load additional content dynamically.
-    - Collects links to individual paper forums or pages.
-    - Skips already-processed items if partial results exist in `OUTPUT_FILE`.
-    - For each paper, gathers essential info: title, abstract, authors, decisions,
-      reviewer comments, PDF link, etc.
-    - Downloads each PDF (if present) and extracts any email addresses it can find, 
-      including bracketed forms.
-    - Logs results incrementally to `OUTPUT_FILE` and any errors to `ERROR_FILE`.
+    - Preprocesses paper metadata (titles, abstracts, authors), reviewer scores, and reviewer comments into structured prompts.
+    - Generates a fine-tuning dataset in OpenAI's Chat Completion format.
+    - Uploads data and initiates a fine-tuning job via OpenAI's API, regularly polling and printing the job status.
+    - Upon successful fine-tuning, evaluates the fine-tuned model on a separate test set, calculating and reporting the following metrics clearly:
+        - Accuracy: The proportion of correct predictions.
+        - Precision: The correctness of positive predictions (Accept).
+        - Recall: The completeness of identifying positive cases (Accept).
+        - F1-score: The balanced measure between Precision and Recall.
 
-After successful completion, you should see two JSON files:
-    - OUTPUT_FILE: Contains metadata for successfully processed papers.
-    - ERROR_FILE: Contains records of any papers that could not be fully processed 
-      due to scraping or download issues.
+After successful completion:
+    - Fine-tuned model ID is clearly printed.
+    - Evaluation metrics are displayed to assist in selecting the optimal fine-tuned model variant for your dataset.
 """
 
 import json
