@@ -1,8 +1,13 @@
 # coding: utf-8
+
 """
 Fine-Tuning OpenAI Model for Paper Decision Prediction (Modified with Detailed Comments)
 
-This script demonstrates how to fine-tune an OpenAI language model (e.g., GPT-4) to predict the acceptance or rejection of academic papers using metadata and reviewer feedback collected from repositories such as OpenReview. The process includes data preprocessing, model training through OpenAI’s fine-tuning API, and evaluation using common machine learning metrics.
+This script demonstrates how to fine-tune an OpenAI language model (e.g., GPT-4) to 
+predict the acceptance or rejection of academic papers using metadata and reviewer 
+feedback collected from repositories such as OpenReview. The process includes data 
+preprocessing, model training through OpenAI’s fine-tuning API, and evaluation using 
+common machine learning metrics.
 
 Prerequisites:
     - Python 3.9+ (recommended)
@@ -24,13 +29,17 @@ Usage:
 
     4. Start the fine-tuning process by running:
            python Finetune_OpenAI_Model.py
-       Or, if using a Jupyter notebook (`Finetune_OpenAI_Model.ipynb`), open Jupyter and execute all cells.
+       Or, if using a Jupyter notebook (`Finetune_OpenAI_Model.ipynb`), 
+       open Jupyter and execute all cells.
 
 What It Does:
-    - Preprocesses paper metadata (titles, abstracts, authors), reviewer scores, and reviewer comments into structured prompts.
+    - Preprocesses paper metadata (titles, abstracts, authors), reviewer scores, and 
+      reviewer comments into structured prompts.
     - Generates a fine-tuning dataset in OpenAI's Chat Completion format.
-    - Uploads data and initiates a fine-tuning job via OpenAI's API, regularly polling and printing the job status.
-    - Upon successful fine-tuning, evaluates the fine-tuned model on a separate test set, calculating and reporting the following metrics clearly:
+    - Uploads data and initiates a fine-tuning job via OpenAI's API, regularly polling
+      and printing the job status.
+    - Upon successful fine-tuning, evaluates the fine-tuned model on a separate test set, 
+      calculating and reporting the following metrics clearly:
         - Accuracy: The proportion of correct predictions.
         - Precision: The correctness of positive predictions (Accept).
         - Recall: The completeness of identifying positive cases (Accept).
@@ -38,7 +47,8 @@ What It Does:
 
 After successful completion:
     - Fine-tuned model ID is clearly printed.
-    - Evaluation metrics are displayed to assist in selecting the optimal fine-tuned model variant for your dataset.
+    - Evaluation metrics are displayed to assist in selecting the optimal fine-tuned model 
+      variant for your dataset.
 """
 
 import json
